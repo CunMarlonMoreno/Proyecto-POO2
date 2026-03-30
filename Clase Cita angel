@@ -1,0 +1,20 @@
+// Archivo: Cita.java
+public class Cita {
+    private String fecha;
+    private String hora;
+    // Composición: La cita "usa" objetos que ya creamos
+    private Dueno cliente;
+    private Mascota paciente;
+
+    public Cita(String fecha, String hora, Dueno cliente, Mascota paciente) {
+        this.fecha = fecha;
+        this.hora = hora;
+        this.cliente = cliente;
+        this.paciente = paciente;
+    }
+
+    public void mostrarCita() {
+        System.out.println("Cita programada para: " + fecha + " a las " + hora);
+        System.out.println("Atender a: " + paciente.getNombre() + " (Dueño: " + cliente.getNombre() + ")");
+    }
+}
