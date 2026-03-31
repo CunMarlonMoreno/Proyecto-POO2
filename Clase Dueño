@@ -1,4 +1,3 @@
-// Archivo: Dueno.java
 import java.util.ArrayList;
 
 public class Dueno {
@@ -6,17 +5,15 @@ public class Dueno {
     private String nombre;
     private String telefono;
     
-    // Relación: Un dueño tiene una lista de mascotas (ArrayList básico)
     private ArrayList<Mascota> misMascotas;
 
     public Dueno(String cedula, String nombre, String telefono) {
         this.cedula = cedula;
         this.nombre = nombre;
         this.telefono = telefono;
-        this.misMascotas = new ArrayList<>(); // Inicializamos la lista vacía
+        this.misMascotas = new ArrayList<>(); 
     }
 
-    // Método para agregar la mascota a la lista del dueño
     public void agregarMascota(Mascota m) {
         misMascotas.add(m);
     }
@@ -28,7 +25,6 @@ public class Dueno {
         System.out.println("Dueño: " + nombre + " (Cédula: " + cedula + ") - Tel: " + telefono);
         System.out.println("Mascotas registradas:");
         
-        // Un ciclo for normalito para mostrar las mascotas
         for (int i = 0; i < misMascotas.size(); i++) {
             System.out.print("  - ");
             misMascotas.get(i).mostrarInfoMascota();
