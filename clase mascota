@@ -1,18 +1,14 @@
-// Archivo: Mascota.java
 public class Mascota {
-    // Atributos privados (Encapsulamiento básico que pide cualquier profe)
     private String nombre;
     private String especie;
     private int edad;
 
-    // Constructor
     public Mascota(String nombre, String especie, int edad) {
         this.nombre = nombre;
         this.especie = especie;
         this.edad = edad;
     }
 
-    // Métodos Get y Set
     public String getNombre() { return nombre; }
     public void setNombre(String nombre) { this.nombre = nombre; }
 
@@ -22,7 +18,6 @@ public class Mascota {
     public int getEdad() { return edad; }
     public void setEdad(int edad) { this.edad = edad; }
 
-    // Método para mostrar los datos de la mascota
     public void mostrarInfoMascota() {
         System.out.println("Mascota: " + nombre + " | Especie: " + especie + " | Edad: " + edad + " años.");
     }
