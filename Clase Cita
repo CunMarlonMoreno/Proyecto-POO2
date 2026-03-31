@@ -1,8 +1,6 @@
-// Archivo: Cita.java
 public class Cita {
     private String fecha;
     private String hora;
-    // Composición: La cita "usa" objetos que ya creamos
     private Dueno cliente;
     private Mascota paciente;
 
