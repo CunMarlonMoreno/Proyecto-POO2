@@ -4,27 +4,27 @@ public class Dueno {
     private String cedula;
     private String nombre;
     private String telefono;
-    
     private ArrayList<Mascota> misMascotas;
 
     public Dueno(String cedula, String nombre, String telefono) {
         this.cedula = cedula;
         this.nombre = nombre;
         this.telefono = telefono;
-        this.misMascotas = new ArrayList<>(); 
+        this.misMascotas = new ArrayList<>();
     }
 
     public void agregarMascota(Mascota m) {
         misMascotas.add(m);
     }
 
-    public String getNombre() { return nombre; }
+    public String getNombre() { 
+        return nombre;
+    }
 
     public void mostrarInfoDueno() {
         System.out.println("\n-----------------------------------");
         System.out.println("Dueño: " + nombre + " (Cédula: " + cedula + ") - Tel: " + telefono);
         System.out.println("Mascotas registradas:");
-        
         for (int i = 0; i < misMascotas.size(); i++) {
             System.out.print("  - ");
             misMascotas.get(i).mostrarInfoMascota();
