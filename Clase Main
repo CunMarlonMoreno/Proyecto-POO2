@@ -4,26 +4,26 @@ public class Main {
         System.out.println("=== AVANCE DE PROYECTO: VETERINARIA ===");
         System.out.println("Prueba de creación de objetos y relaciones...\n");
 
-    
+        // Creación de Mascotas
         Mascota m1 = new Mascota("Firulais", "Perro", 3);
         Mascota m2 = new Mascota("Mishi", "Gato", 2);
         Mascota m3 = new Mascota("Rex", "Perro", 5);
-
+        
+        // Creación de Dueños
         Dueno d1 = new Dueno("1001", "Carlos Ramirez", "3201234567");
         Dueno d2 = new Dueno("1002", "Ana Gomez", "3159876543");
 
-     
+        // Asignación de Mascotas a Dueños
         d1.agregarMascota(m1); 
         d1.agregarMascota(m2); 
+        d2.agregarMascota(m3);
         
-        d2.agregarMascota(m3); 
-
-      
+        // Mostrar la información
         System.out.println("=== CLIENTES REGISTRADOS ===");
         d1.mostrarInfoDueno();
         d2.mostrarInfoDueno();
 
-       
+        // Agendamiento de Citas
         System.out.println("\n=== PRUEBA DE AGENDAMIENTO DE CITAS ===");
         Cita cita1 = new Cita("25/11/2023", "03:00 PM", d1, m1);
         Cita cita2 = new Cita("25/11/2023", "04:30 PM", d2, m3);
@@ -33,4 +33,3 @@ public class Main {
         
         System.out.println("\n=== FIN DEL AVANCE ===");
     }
-}
