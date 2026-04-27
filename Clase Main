@@ -1,35 +1,49 @@
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
-        
+
         System.out.println("=== AVANCE DE PROYECTO: VETERINARIA ===");
         System.out.println("Prueba de creación de objetos y relaciones...\n");
 
         // Creación de Mascotas
         Mascota m1 = new Mascota("Firulais", "Perro", 3);
-        Mascota m2 = new Mascota("Mishi", "Gato", 2);
-        Mascota m3 = new Mascota("Rex", "Perro", 5);
-        
+        Mascota m2 = new Mascota("Mishi",    "Gato",  2);
+        Mascota m3 = new Mascota("Rex",      "Perro", 5);
+
         // Creación de Dueños
         Dueno d1 = new Dueno("1001", "Carlos Ramirez", "3201234567");
-        Dueno d2 = new Dueno("1002", "Ana Gomez", "3159876543");
+        Dueno d2 = new Dueno("1002", "Ana Gomez",      "3159876543");
 
-        // Asignación de Mascotas a Dueños
-        d1.agregarMascota(m1); 
-        d1.agregarMascota(m2); 
+        // Asignación de mascotas a dueños
+        d1.agregarMascota(m1);
+        d1.agregarMascota(m2);
         d2.agregarMascota(m3);
-        
-        // Mostrar la información
-        System.out.println("=== CLIENTES REGISTRADOS ===");
-        d1.mostrarInfoDueno();
-        d2.mostrarInfoDueno();
+
+        // ── Usar la interfaz Mostrable ───────────────────────────────────
+        // Guardamos todo en una lista de tipo Mostrable
+        // Así demostramos el POLIMORFISMO de la interfaz
+        ArrayList<Mostrable> elementos = new ArrayList<>();
+        elementos.add(d1);
+        elementos.add(d2);
+        elementos.add(m1);
+        elementos.add(m2);
+        elementos.add(m3);
+
+        System.out.println("=== INFORMACIÓN DE TODOS LOS REGISTROS ===");
+        for (Mostrable elemento : elementos) {
+            elemento.mostrarInfo(); // cada uno sabe cómo mostrarse
+        }
 
         // Agendamiento de Citas
-        System.out.println("\n=== PRUEBA DE AGENDAMIENTO DE CITAS ===");
+        System.out.println("\n=== CITAS AGENDADAS ===");
         Cita cita1 = new Cita("25/11/2023", "03:00 PM", d1, m1);
         Cita cita2 = new Cita("25/11/2023", "04:30 PM", d2, m3);
 
-        cita1.mostrarCita();
-        cita2.mostrarCita();
-        
+        cita1.mostrarInfo();
+        System.out.println();
+        cita2.mostrarInfo();
+
         System.out.println("\n=== FIN DEL AVANCE ===");
     }
+}

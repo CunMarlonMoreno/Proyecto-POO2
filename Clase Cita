@@ -1,4 +1,4 @@
-public class Cita {
+public class Cita implements Mostrable {
     private String fecha;
     private String hora;
     private Dueno cliente;
